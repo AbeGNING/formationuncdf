@@ -3,18 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('pages.accueil');
-})->name('accueil');
+Route::get('/',               'FormationController@accueil')->name('accueil');
 
-Route::get('/produits', function () {
-    return view('pages.produits');
-})->name('produits');
+Route::get('/produits',       'FormationController@produit')->name('produits');
 
-Route::get('/services', function () {
-    return view('pages.services');
-})->name('services');
+Route::get('/services',       'FormationController@service')->name('services');
 
-Route::get('/contactez-nous', function () {
-    return view('pages.contact');
-})->name('contact');
+Route::get('/contactez-nous', 'FormationController@contact')->name('contact');
