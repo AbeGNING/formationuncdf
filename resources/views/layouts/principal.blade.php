@@ -32,8 +32,9 @@
                     <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="que cherchez vous ?">
+        <form class="form-inline my-2 my-lg-0" method="POST" action="{{ route('recherche') }}">
+                @csrf
+                <input class="form-control mr-sm-2" type="text" placeholder="Pays à rechercher ?" name="cherche">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
             </form>
         </div>

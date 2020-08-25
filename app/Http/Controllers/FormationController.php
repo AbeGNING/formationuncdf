@@ -31,4 +31,10 @@ class FormationController extends Controller
     {
         return view('pages.contact');
     }
+
+    public function recherche(Request $request)
+    {
+        $tousEmployes = Employe::where('pays', 'like', '%'.$request->cherche.'%')->paginate(10);
+         return view('pages.services', compact('tousEmployes'));
+    }
 }
